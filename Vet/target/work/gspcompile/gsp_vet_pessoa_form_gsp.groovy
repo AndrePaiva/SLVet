@@ -1,0 +1,110 @@
+import org.codehaus.groovy.grails.plugins.metadata.GrailsPlugin
+import org.codehaus.groovy.grails.web.pages.GroovyPage
+import org.codehaus.groovy.grails.web.taglib.*
+import org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException
+import org.springframework.web.util.*
+import grails.util.GrailsUtil
+
+class gsp_vet_pessoa_form_gsp extends GroovyPage {
+public String getGroovyPageFileName() { "/WEB-INF/grails-app/views/pessoa/_form.gsp" }
+public Object run() {
+Writer out = getOut()
+Writer expressionOut = getExpressionOut()
+registerSitemeshPreprocessMode()
+printHtmlPart(0)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'userEmail', 'error'))
+printHtmlPart(1)
+invokeTag('message','g',7,['code':("pessoa.userEmail.label"),'default':("User Email")],-1)
+printHtmlPart(2)
+invokeTag('field','g',10,['type':("email"),'name':("userEmail"),'required':(""),'value':(pessoaInstance?.userEmail)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'telefone1', 'error'))
+printHtmlPart(4)
+invokeTag('message','g',16,['code':("pessoa.telefone1.label"),'default':("Telefone1")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',19,['name':("telefone1"),'maxlength':("13"),'required':(""),'value':(pessoaInstance?.telefone1)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'telefone2', 'error'))
+printHtmlPart(5)
+invokeTag('message','g',25,['code':("pessoa.telefone2.label"),'default':("Telefone2")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',28,['name':("telefone2"),'maxlength':("13"),'required':(""),'value':(pessoaInstance?.telefone2)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'complemento', 'error'))
+printHtmlPart(6)
+invokeTag('message','g',34,['code':("pessoa.complemento.label"),'default':("Complemento")],-1)
+printHtmlPart(7)
+invokeTag('textField','g',37,['name':("complemento"),'value':(pessoaInstance?.complemento)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'bairro', 'error'))
+printHtmlPart(8)
+invokeTag('message','g',43,['code':("pessoa.bairro.label"),'default':("Bairro")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',46,['name':("bairro"),'required':(""),'value':(pessoaInstance?.bairro)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'cep', 'error'))
+printHtmlPart(9)
+invokeTag('message','g',52,['code':("pessoa.cep.label"),'default':("Cep")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',55,['name':("cep"),'required':(""),'value':(pessoaInstance?.cep)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'cidade', 'error'))
+printHtmlPart(10)
+invokeTag('message','g',61,['code':("pessoa.cidade.label"),'default':("Cidade")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',64,['name':("cidade"),'required':(""),'value':(pessoaInstance?.cidade)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'cpf', 'error'))
+printHtmlPart(11)
+invokeTag('message','g',70,['code':("pessoa.cpf.label"),'default':("Cpf")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',73,['name':("cpf"),'required':(""),'value':(pessoaInstance?.cpf)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'dataNascimento', 'error'))
+printHtmlPart(12)
+invokeTag('message','g',79,['code':("pessoa.dataNascimento.label"),'default':("Data Nascimento")],-1)
+printHtmlPart(2)
+invokeTag('datePicker','g',82,['name':("dataNascimento"),'precision':("day"),'value':(pessoaInstance?.dataNascimento)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'logradouro', 'error'))
+printHtmlPart(13)
+invokeTag('message','g',88,['code':("pessoa.logradouro.label"),'default':("Logradouro")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',91,['name':("logradouro"),'required':(""),'value':(pessoaInstance?.logradouro)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'nome', 'error'))
+printHtmlPart(14)
+invokeTag('message','g',97,['code':("pessoa.nome.label"),'default':("Nome")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',100,['name':("nome"),'required':(""),'value':(pessoaInstance?.nome)],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'numero', 'error'))
+printHtmlPart(15)
+invokeTag('message','g',106,['code':("pessoa.numero.label"),'default':("Numero")],-1)
+printHtmlPart(2)
+invokeTag('field','g',109,['name':("numero"),'type':("number"),'value':(pessoaInstance.numero),'required':("")],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'rg', 'error'))
+printHtmlPart(16)
+invokeTag('message','g',115,['code':("pessoa.rg.label"),'default':("Rg")],-1)
+printHtmlPart(2)
+invokeTag('field','g',118,['name':("rg"),'type':("number"),'value':(pessoaInstance.rg),'required':("")],-1)
+printHtmlPart(3)
+expressionOut.print(hasErrors(bean: pessoaInstance, field: 'uf', 'error'))
+printHtmlPart(17)
+invokeTag('message','g',124,['code':("pessoa.uf.label"),'default':("Uf")],-1)
+printHtmlPart(2)
+invokeTag('textField','g',127,['name':("uf"),'required':(""),'value':(pessoaInstance?.uf)],-1)
+printHtmlPart(18)
+}
+public static final Map JSP_TAGS = new HashMap()
+protected void init() {
+	this.jspTags = JSP_TAGS
+}
+public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
+public static final long LAST_MODIFIED = 1473458304465L
+public static final String EXPRESSION_CODEC = 'html'
+public static final String STATIC_CODEC = 'none'
+public static final String OUT_CODEC = 'html'
+public static final String TAGLIB_CODEC = 'none'
+}
