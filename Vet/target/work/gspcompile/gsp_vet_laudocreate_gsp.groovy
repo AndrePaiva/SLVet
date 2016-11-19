@@ -75,7 +75,7 @@ printHtmlPart(20)
 invokeTag('submitButton','g',33,['name':("create"),'class':("save"),'value':(message(code: 'default.button.create.label', default: 'Create'))],-1)
 printHtmlPart(21)
 })
-invokeTag('form','g',35,['url':([resource:laudoInstance, action:'save'])],2)
+invokeTag('form','g',35,['url':([resource:laudoInstance, action:'save']),'enctype':("multipart/form-data")],2)
 printHtmlPart(22)
 })
 invokeTag('captureBody','sitemesh',37,[:],1)
@@ -86,7 +86,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473459160765L
+public static final long LAST_MODIFIED = 1479498488657L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

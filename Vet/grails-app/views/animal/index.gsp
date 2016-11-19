@@ -10,13 +10,16 @@
 	<body>
 		<a href="#list-animal" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
+		<!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+        	<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>                    	      
+            <li class="active">Cadastros</li>
+            <li class="active">Animal</li>
+            <li class="active">Listar Animais</li>
+        </ul>
+        <!-- END BREADCRUMB -->
 		</div>
 		<div id="list-animal" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>

@@ -1,3 +1,4 @@
+import vet.Agendamento
 import org.codehaus.groovy.grails.plugins.metadata.GrailsPlugin
 import org.codehaus.groovy.grails.web.pages.GroovyPage
 import org.codehaus.groovy.grails.web.taglib.*
@@ -12,25 +13,25 @@ Writer out = getOut()
 Writer expressionOut = getExpressionOut()
 registerSitemeshPreprocessMode()
 printHtmlPart(0)
-expressionOut.print(hasErrors(bean: agendamentoInstance, field: 'cliente', 'error'))
+expressionOut.print(hasErrors(bean: agendamentoInstance, field: 'animal', 'error'))
 printHtmlPart(1)
-invokeTag('message','g',5,['code':("agendamento.cliente.label"),'default':("Cliente")],-1)
+invokeTag('message','g',8,['code':("agendamento.animal.label"),'default':("Animal")],-1)
 printHtmlPart(2)
-invokeTag('select','g',8,['id':("cliente"),'name':("cliente.id"),'from':(Pessoa.list()),'optionKey':("id"),'required':(""),'value':(agendamentoInstance?.cliente?.nome),'class':("many-to-one")],-1)
+invokeTag('select','g',18,['id':("animal"),'name':("animal.id"),'from':(vet.Animal.list()),'optionKey':("id"),'required':(""),'value':(agendamentoInstance?.animal?.id),'class':("form-control")],-1)
 printHtmlPart(3)
-expressionOut.print(hasErrors(bean: agendamentoInstance, field: 'data', 'error'))
+expressionOut.print(hasErrors(bean: agendamentoInstance, field: 'start', 'error'))
 printHtmlPart(4)
-invokeTag('message','g',14,['code':("agendamento.data.label"),'default':("Data")],-1)
-printHtmlPart(2)
-invokeTag('datePicker','g',17,['name':("data"),'precision':("day"),'value':(agendamentoInstance?.data)],-1)
+invokeTag('message','g',26,['code':("agendamento.start.label"),'default':("Data Inicio")],-1)
 printHtmlPart(5)
+invokeTag('datePicker','g',30,['name':("start"),'precision':("hour"),'value':(agendamentoInstance?.start)],-1)
+printHtmlPart(6)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473892932894L
+public static final long LAST_MODIFIED = 1479498488174L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

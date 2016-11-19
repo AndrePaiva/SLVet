@@ -55,8 +55,6 @@ printHtmlPart(12)
 invokeTag('sortableColumn','g',27,['property':("nomeArquivo"),'title':(message(code: 'arquivoLaudo.nomeArquivo.label', default: 'Nome Arquivo'))],-1)
 printHtmlPart(13)
 invokeTag('sortableColumn','g',29,['property':("uploadData"),'title':(message(code: 'arquivoLaudo.uploadData.label', default: 'Upload Data'))],-1)
-printHtmlPart(13)
-invokeTag('sortableColumn','g',31,['property':("arquivo"),'title':(message(code: 'arquivoLaudo.arquivo.label', default: 'Arquivo'))],-1)
 printHtmlPart(14)
 loop:{
 int i = 0
@@ -67,18 +65,18 @@ printHtmlPart(16)
 createTagBody(3, {->
 expressionOut.print(fieldValue(bean: arquivoLaudoInstance, field: "nomeArquivo"))
 })
-invokeTag('link','g',39,['action':("download"),'id':(arquivoLaudoInstance.id)],3)
+invokeTag('link','g',38,['action':("download"),'id':(arquivoLaudoInstance.id)],3)
 printHtmlPart(17)
-invokeTag('formatDate','g',41,['date':(arquivoLaudoInstance.uploadData)],-1)
+invokeTag('formatDate','g',40,['date':(arquivoLaudoInstance.uploadData)],-1)
 printHtmlPart(18)
 i++
 }
 }
 printHtmlPart(19)
-invokeTag('paginate','g',49,['total':(arquivoLaudoInstanceCount ?: 0)],-1)
+invokeTag('paginate','g',48,['total':(arquivoLaudoInstanceCount ?: 0)],-1)
 printHtmlPart(20)
 })
-invokeTag('captureBody','sitemesh',52,[:],1)
+invokeTag('captureBody','sitemesh',51,[:],1)
 printHtmlPart(21)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -86,7 +84,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473898899379L
+public static final long LAST_MODIFIED = 1479498488528L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

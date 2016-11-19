@@ -26,51 +26,39 @@ invokeTag('captureTitle','sitemesh',8,[:],3)
 })
 invokeTag('wrapTitleTag','sitemesh',8,[:],2)
 printHtmlPart(2)
-})
-invokeTag('captureHead','sitemesh',9,[:],1)
-printHtmlPart(2)
-createTagBody(1, {->
+expressionOut.print(request.contextPath)
 printHtmlPart(3)
-invokeTag('message','g',11,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
+expressionOut.print(request.contextPath)
 printHtmlPart(4)
-expressionOut.print(createLink(uri: '/'))
+expressionOut.print(request.contextPath)
 printHtmlPart(5)
-invokeTag('message','g',14,['code':("default.home.label")],-1)
+expressionOut.print(request.contextPath)
 printHtmlPart(6)
-createTagBody(2, {->
-invokeTag('message','g',15,['code':("default.new.label"),'args':([entityName])],-1)
-})
-invokeTag('link','g',15,['class':("create"),'action':("create")],2)
+expressionOut.print(request.contextPath)
 printHtmlPart(7)
-invokeTag('message','g',19,['code':("default.list.label"),'args':([entityName])],-1)
+expressionOut.print(request.contextPath)
 printHtmlPart(8)
-if(true && (flash.message)) {
-printHtmlPart(9)
-expressionOut.print(flash.message)
-printHtmlPart(10)
-}
-printHtmlPart(11)
-invokeTag('sortableColumn','g',27,['property':("data"),'title':(message(code: 'agendamento.data.label', default: 'Data'))],-1)
-printHtmlPart(12)
-loop:{
-int i = 0
-for( agendamentoInstance in (agendamentoInstanceList) ) {
-printHtmlPart(13)
-expressionOut.print((i % 2) == 0 ? 'even' : 'odd')
-printHtmlPart(14)
-createTagBody(3, {->
-expressionOut.print(fieldValue(bean: agendamentoInstance, field: "data"))
 })
-invokeTag('link','g',35,['action':("show"),'id':(agendamentoInstance.id)],3)
+invokeTag('captureHead','sitemesh',16,[:],1)
+printHtmlPart(9)
+createTagBody(1, {->
+printHtmlPart(10)
+invokeTag('message','g',18,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
+printHtmlPart(11)
+expressionOut.print(createLink(uri: '/'))
+printHtmlPart(12)
+invokeTag('message','g',21,['code':("default.home.label")],-1)
+printHtmlPart(13)
+if(true && (flash.message)) {
+printHtmlPart(14)
+expressionOut.print(flash.message)
 printHtmlPart(15)
-i++
-}
 }
 printHtmlPart(16)
-invokeTag('paginate','g',42,['total':(agendamentoInstanceCount ?: 0)],-1)
+expressionOut.print(g.createLink(controller:'agendamento', action: 'jsonEvent'))
 printHtmlPart(17)
 })
-invokeTag('captureBody','sitemesh',45,[:],1)
+invokeTag('captureBody','sitemesh',50,[:],1)
 printHtmlPart(18)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -78,7 +66,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473892495608L
+public static final long LAST_MODIFIED = 1479498488255L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

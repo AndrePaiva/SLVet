@@ -20,6 +20,8 @@ grails.mime.types = [ // the first one is the default format
     atom:          'application/atom+xml',
     css:           'text/css',
     csv:           'text/csv',
+	pdf:		   'application/pdf',
+	csv: 		   'text/csv',
     form:          'application/x-www-form-urlencoded',
     html:          ['text/html','application/xhtml+xml'],
     js:            'text/javascript',
@@ -115,3 +117,38 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+//grails.plugin.springsecurity.auth.loginFormUrl = '/autenticar/logar'
+//grails.plugin.springsecurity.logout.afterLogoutUrl = '/autenticar/logout'
+
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = false
+grails.plugin.springsecurity.dao.hideUserNotFoundExceptions = false
+grails.plugin.springsecurity.adh.errorPage="/j_spring_security_logout"
+grails.plugin.springsecurity.password.algorithm = 'SHA-256'
+
+grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
+
+grails.plugin.springsecurity.interceptUrlMap = [
+	'/agendamento/**':         ['ROLE_ADMIN'],
+	'/animal/**':         ['ROLE_ADMIN'],
+	'/laudo/**':         ['ROLE_ADMIN'],
+	'/pessoa/**':         ['ROLE_ADMIN'],
+	'/veterinario/**':         ['ROLE_ADMIN'],
+	'/**':               ['IS_AUTHENTICATED_ANONYMOUSLY']	
+]
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'vet.security.Usuario'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'vet.security.UsuarioPermissao'
+grails.plugin.springsecurity.authority.className = 'vet.security.Permissao'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/assets/**':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+

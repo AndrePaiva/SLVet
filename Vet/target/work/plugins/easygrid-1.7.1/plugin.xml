@@ -1,0 +1,35 @@
+<plugin name='easygrid' version='1.7.1' grailsVersion='2.2 &gt; *'>
+  <author>Tudor Malene</author>
+  <authorEmail>tudor.malene@gmail.com</authorEmail>
+  <title>Easygrid Plugin</title>
+  <description>
+        Provides a declarative way of defining Data Grids.
+        It works currently with jqGrid, google visualization and jquery dataTables.
+        Out of the box it provides sorting, filtering, exporting and inline edit just by declaring a grid in a controller and adding a tag to your gsp.
+        It also provides a powerful selection widget ( a direct replacement for drop-boxes )
+        </description>
+  <documentation>https://github.com/tudor-malene/Easygrid</documentation>
+  <type>EasygridGrailsPlugin</type>
+  <resources>
+    <resource>DefaultEasygridConfig</resource>
+    <resource>EasygridGrailsPluginResources</resource>
+    <resource>org.grails.plugin.easygrid.EasygridFilters</resource>
+    <resource>spring.resources</resource>
+    <resource>org.grails.plugin.easygrid.AutocompleteService</resource>
+    <resource>org.grails.plugin.easygrid.EasygridDispatchService</resource>
+    <resource>org.grails.plugin.easygrid.EasygridExportService</resource>
+    <resource>org.grails.plugin.easygrid.EasygridInitService</resource>
+    <resource>org.grails.plugin.easygrid.EasygridService</resource>
+    <resource>org.grails.plugin.easygrid.FilterFormService</resource>
+    <resource>org.grails.plugin.easygrid.FilterService</resource>
+    <resource>org.grails.plugin.easygrid.datasource.CustomDatasourceService</resource>
+    <resource>org.grails.plugin.easygrid.datasource.GormDatasourceService</resource>
+    <resource>org.grails.plugin.easygrid.datasource.ListDatasourceService</resource>
+    <resource>org.grails.plugin.easygrid.grids.ClassicGridService</resource>
+    <resource>org.grails.plugin.easygrid.grids.DataTablesGridService</resource>
+    <resource>org.grails.plugin.easygrid.grids.JqGridMultiSearchService</resource>
+    <resource>org.grails.plugin.easygrid.grids.JqueryGridService</resource>
+    <resource>org.grails.plugin.easygrid.grids.VisualizationGridService</resource>
+    <resource>org.codehaus.groovy.grails.plugins.easygrid.EasygridTagLib</resource>
+  </resources>
+</plugin>

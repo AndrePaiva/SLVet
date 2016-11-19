@@ -28,7 +28,6 @@
 					
 						<g:sortableColumn property="uploadData" title="${message(code: 'arquivoLaudo.uploadData.label', default: 'Upload Data')}" />
 					
-						<g:sortableColumn property="arquivo" title="${message(code: 'arquivoLaudo.arquivo.label', default: 'Arquivo')}" />
 					
 					</tr>
 				</thead>

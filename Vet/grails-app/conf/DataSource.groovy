@@ -26,7 +26,7 @@ environments {
         dataSource {
            /* dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"*/
-			dbCreate = "create" // one of 'create', 'create-drop', 'update', 'validate', ''
+			dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
 			url = "jdbc:mysql://localhost:3306/slvet?useSSL=false"
 			username = "root"
 			password = "123456"
@@ -42,7 +42,7 @@ environments {
         dataSource {
            /* dbCreate = "update"
             url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"*/
-			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+			//dbCreate = "create" // one of 'create', 'create-drop', 'update', 'validate', ''
 			url = "jdbc:mysql://localhost:3306/slvet?useSSL=false"
 			username = "root"
 			password = "123456"

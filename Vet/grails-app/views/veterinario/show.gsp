@@ -1,5 +1,5 @@
 
-
+<%@ page import="vet.Veterinario" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,11 +23,137 @@
 			</g:if>
 			<ol class="property-list veterinario">
 			
+				<g:if test="${veterinarioInstance?.userEmail}">
+				<li class="fieldcontain">
+					<span id="userEmail-label" class="col-md-3 label-show"><g:message code="veterinario.userEmail.label" default="User Email" /></span>
+					
+						<span class="col-md-4" aria-labelledby="userEmail-label"><g:fieldValue bean="${veterinarioInstance}" field="userEmail"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.telefone1}">
+				<li class="fieldcontain">
+					<span id="telefone1-label" class="col-md-3 label-show"><g:message code="veterinario.telefone1.label" default="Telefone1" /></span>
+					
+						<span class="col-md-4" aria-labelledby="telefone1-label"><g:fieldValue bean="${veterinarioInstance}" field="telefone1"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.telefone2}">
+				<li class="fieldcontain">
+					<span id="telefone2-label" class="col-md-3 label-show"><g:message code="veterinario.telefone2.label" default="Telefone2" /></span>
+					
+						<span class="col-md-4" aria-labelledby="telefone2-label"><g:fieldValue bean="${veterinarioInstance}" field="telefone2"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.complemento}">
+				<li class="fieldcontain">
+					<span id="complemento-label" class="col-md-3 label-show"><g:message code="veterinario.complemento.label" default="Complemento" /></span>
+					
+						<span class="col-md-4" aria-labelledby="complemento-label"><g:fieldValue bean="${veterinarioInstance}" field="complemento"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.bairro}">
+				<li class="fieldcontain">
+					<span id="bairro-label" class="col-md-3 label-show"><g:message code="veterinario.bairro.label" default="Bairro" /></span>
+					
+						<span class="col-md-4" aria-labelledby="bairro-label"><g:fieldValue bean="${veterinarioInstance}" field="bairro"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.cep}">
+				<li class="fieldcontain">
+					<span id="cep-label" class="col-md-3 label-show"><g:message code="veterinario.cep.label" default="Cep" /></span>
+					
+						<span class="col-md-4" aria-labelledby="cep-label"><g:fieldValue bean="${veterinarioInstance}" field="cep"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.cidade}">
+				<li class="fieldcontain">
+					<span id="cidade-label" class="col-md-3 label-show"><g:message code="veterinario.cidade.label" default="Cidade" /></span>
+					
+						<span class="col-md-4" aria-labelledby="cidade-label"><g:fieldValue bean="${veterinarioInstance}" field="cidade"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.cpf}">
+				<li class="fieldcontain">
+					<span id="cpf-label" class="col-md-3 label-show"><g:message code="veterinario.cpf.label" default="Cpf" /></span>
+					
+						<span class="col-md-4" aria-labelledby="cpf-label"><g:fieldValue bean="${veterinarioInstance}" field="cpf"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${veterinarioInstance?.crmv}">
 				<li class="fieldcontain">
-					<span id="crmv-label" class="property-label"><g:message code="veterinario.crmv.label" default="Crmv" /></span>
+					<span id="crmv-label" class="col-md-3 label-show"><g:message code="veterinario.crmv.label" default="Crmv" /></span>
 					
-						<span class="property-value" aria-labelledby="crmv-label"><g:fieldValue bean="${veterinarioInstance}" field="crmv"/></span>
+						<span class="col-md-4" aria-labelledby="crmv-label"><g:fieldValue bean="${veterinarioInstance}" field="crmv"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.dataNascimento}">
+				<li class="fieldcontain">
+					<span id="dataNascimento-label" class="col-md-3 label-show"><g:message code="veterinario.dataNascimento.label" default="Data Nascimento" /></span>
+					
+						<span class="col-md-4" aria-labelledby="dataNascimento-label"><g:formatDate date="${veterinarioInstance?.dataNascimento}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.logradouro}">
+				<li class="fieldcontain">
+					<span id="logradouro-label" class="col-md-3 label-show"><g:message code="veterinario.logradouro.label" default="Logradouro" /></span>
+					
+						<span class="col-md-4" aria-labelledby="logradouro-label"><g:fieldValue bean="${veterinarioInstance}" field="logradouro"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.nome}">
+				<li class="fieldcontain">
+					<span id="nome-label" class="col-md-3 label-show"><g:message code="veterinario.nome.label" default="Nome" /></span>
+					
+						<span class="col-md-4" aria-labelledby="nome-label"><g:fieldValue bean="${veterinarioInstance}" field="nome"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.numero}">
+				<li class="fieldcontain">
+					<span id="numero-label" class="col-md-3 label-show"><g:message code="veterinario.numero.label" default="Numero" /></span>
+					
+						<span class="col-md-4" aria-labelledby="numero-label"><g:fieldValue bean="${veterinarioInstance}" field="numero"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.rg}">
+				<li class="fieldcontain">
+					<span id="rg-label" class="col-md-3 label-show"><g:message code="veterinario.rg.label" default="Rg" /></span>
+					
+						<span class="col-md-4" aria-labelledby="rg-label"><g:fieldValue bean="${veterinarioInstance}" field="rg"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${veterinarioInstance?.uf}">
+				<li class="fieldcontain">
+					<span id="uf-label" class="col-md-3 label-show"><g:message code="veterinario.uf.label" default="Uf" /></span>
+					
+						<span class="col-md-4" aria-labelledby="uf-label"><g:fieldValue bean="${veterinarioInstance}" field="uf"/></span>
 					
 				</li>
 				</g:if>

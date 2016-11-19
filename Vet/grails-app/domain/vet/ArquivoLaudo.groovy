@@ -5,6 +5,11 @@ class ArquivoLaudo {
 	byte[] arquivo
 	Date uploadData = new Date()
 	
+	@Override
+	String toString(){
+		return this.nomeArquivo
+	}
+	
 	static mapping = {
 		table "ARQUIVO_LAUDO"
 		version false
@@ -15,7 +20,7 @@ class ArquivoLaudo {
 	}
 	
 	static constraints = {
-		nomeArquivo(blank:false,nullable:false)
+		nomeArquivo(blank:false,nullable:true)
 		arquivo(blank: true, nullable:true, maxSize:1024*200)
 	}
 }

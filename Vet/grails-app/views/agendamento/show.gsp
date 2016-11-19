@@ -1,5 +1,5 @@
 
-
+<%@ page import="vet.Agendamento" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,11 +23,29 @@
 			</g:if>
 			<ol class="property-list agendamento">
 			
-				<g:if test="${agendamentoInstance?.data}">
+				<g:if test="${agendamentoInstance?.animal}">
 				<li class="fieldcontain">
-					<span id="data-label" class="property-label"><g:message code="agendamento.data.label" default="Data" /></span>
+					<span id="animal-label" class="property-label"><g:message code="agendamento.animal.label" default="Animal" /></span>
 					
-						<span class="property-value" aria-labelledby="data-label"><g:formatDate date="${agendamentoInstance?.data}" /></span>
+						<span class="property-value" aria-labelledby="animal-label"><g:link controller="animal" action="show" id="${agendamentoInstance?.animal?.id}">${agendamentoInstance?.animal?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${agendamentoInstance?.start}">
+				<li class="fieldcontain">
+					<span id="start-label" class="property-label"><g:message code="agendamento.start.label" default="Start" /></span>
+					
+						<span class="property-value" aria-labelledby="start-label"><g:formatDate date="${agendamentoInstance?.start}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${agendamentoInstance?.title}">
+				<li class="fieldcontain">
+					<span id="title-label" class="property-label"><g:message code="agendamento.title.label" default="Title" /></span>
+					
+						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${agendamentoInstance}" field="title"/></span>
 					
 				</li>
 				</g:if>

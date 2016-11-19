@@ -1,5 +1,5 @@
 
-
+<%@ page import="vet.Veterinario" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,7 +24,17 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="crmv" title="${message(code: 'veterinario.crmv.label', default: 'Crmv')}" />
+						<g:sortableColumn property="userEmail" title="${message(code: 'veterinario.userEmail.label', default: 'User Email')}" />
+					
+						<g:sortableColumn property="telefone1" title="${message(code: 'veterinario.telefone1.label', default: 'Telefone1')}" />
+					
+						<g:sortableColumn property="telefone2" title="${message(code: 'veterinario.telefone2.label', default: 'Telefone2')}" />
+					
+						<g:sortableColumn property="complemento" title="${message(code: 'veterinario.complemento.label', default: 'Complemento')}" />
+					
+						<g:sortableColumn property="bairro" title="${message(code: 'veterinario.bairro.label', default: 'Bairro')}" />
+					
+						<g:sortableColumn property="cep" title="${message(code: 'veterinario.cep.label', default: 'Cep')}" />
 					
 					</tr>
 				</thead>
@@ -32,7 +42,17 @@
 				<g:each in="${veterinarioInstanceList}" status="i" var="veterinarioInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${veterinarioInstance.id}">${fieldValue(bean: veterinarioInstance, field: "crmv")}</g:link></td>
+						<td><g:link action="show" id="${veterinarioInstance.id}">${fieldValue(bean: veterinarioInstance, field: "userEmail")}</g:link></td>
+					
+						<td>${fieldValue(bean: veterinarioInstance, field: "telefone1")}</td>
+					
+						<td>${fieldValue(bean: veterinarioInstance, field: "telefone2")}</td>
+					
+						<td>${fieldValue(bean: veterinarioInstance, field: "complemento")}</td>
+					
+						<td>${fieldValue(bean: veterinarioInstance, field: "bairro")}</td>
+					
+						<td>${fieldValue(bean: veterinarioInstance, field: "cep")}</td>
 					
 					</tr>
 				</g:each>

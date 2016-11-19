@@ -25,25 +25,25 @@
 			
 				<g:if test="${arquivoLaudoInstance?.nomeArquivo}">
 				<li class="fieldcontain">
-					<span id="nomeArquivo-label" class="property-label"><g:message code="arquivoLaudo.nomeArquivo.label" default="Nome Arquivo" /></span>
+					<span id="nomeArquivo-label" class="col-md-3 label-show"><g:message code="arquivoLaudo.nomeArquivo.label" default="Nome Arquivo" /></span>
 					
-						<span class="property-value" aria-labelledby="nomeArquivo-label"><g:fieldValue bean="${arquivoLaudoInstance}" field="nomeArquivo"/></span>
+						<span class="col-md-4" aria-labelledby="nomeArquivo-label"><g:fieldValue bean="${arquivoLaudoInstance}" field="nomeArquivo"/></span>
 					
 				</li>
 				</g:if>
 			
 				<g:if test="${arquivoLaudoInstance?.uploadData}">
 				<li class="fieldcontain">
-					<span id="uploadData-label" class="property-label"><g:message code="arquivoLaudo.uploadData.label" default="Upload Data" /></span>
+					<span id="uploadData-label" class="col-md-3 label-show"><g:message code="arquivoLaudo.uploadData.label" default="Upload Data" /></span>
 					
-						<span class="property-value" aria-labelledby="uploadData-label"><g:formatDate date="${arquivoLaudoInstance?.uploadData}" /></span>
+						<span class="col-md-4" aria-labelledby="uploadData-label"><g:formatDate date="${arquivoLaudoInstance?.uploadData}" /></span>
 					
 				</li>
 				</g:if>
 			
 				<g:if test="${arquivoLaudoInstance?.arquivo}">
 				<li class="fieldcontain">
-					<span id="arquivo-label" class="property-label"><g:message code="arquivoLaudo.arquivo.label" default="Arquivo" /></span>
+					<span id="arquivo-label" class="col-md-3 label-show"><g:message code="arquivoLaudo.arquivo.label" default="Arquivo" /></span>
 					
 				</li>
 				</g:if>

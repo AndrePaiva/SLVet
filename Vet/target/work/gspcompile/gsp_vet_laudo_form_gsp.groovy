@@ -1,3 +1,5 @@
+import vet.Animal
+import vet.Veterinario
 import org.codehaus.groovy.grails.plugins.metadata.GrailsPlugin
 import org.codehaus.groovy.grails.web.pages.GroovyPage
 import org.codehaus.groovy.grails.web.taglib.*
@@ -12,25 +14,37 @@ Writer out = getOut()
 Writer expressionOut = getExpressionOut()
 registerSitemeshPreprocessMode()
 printHtmlPart(0)
-expressionOut.print(hasErrors(bean: laudoInstance, field: 'arquivo', 'error'))
+printHtmlPart(0)
 printHtmlPart(1)
-invokeTag('message','g',7,['code':("laudo.arquivo.label"),'default':("Arquivo")],-1)
+expressionOut.print(hasErrors(bean: laudoInstance, field: 'animal', 'error'))
 printHtmlPart(2)
-invokeTag('textField','g',10,['name':("arquivo"),'required':(""),'value':(laudoInstance?.arquivo)],-1)
+invokeTag('message','g',8,['code':("laudo.animal.label"),'default':("Animal")],-1)
 printHtmlPart(3)
-expressionOut.print(hasErrors(bean: laudoInstance, field: 'data', 'error'))
+invokeTag('select','g',18,['id':("animal"),'name':("animal.id"),'from':(Animal.list()),'optionKey':("id"),'required':(""),'value':(laudoInstance?.animal?.id),'class':("form-control")],-1)
 printHtmlPart(4)
-invokeTag('message','g',16,['code':("laudo.data.label"),'default':("Data")],-1)
-printHtmlPart(2)
-invokeTag('datePicker','g',19,['name':("data"),'precision':("day"),'value':(laudoInstance?.data)],-1)
+expressionOut.print(hasErrors(bean: laudoInstance, field: 'data', 'error'))
 printHtmlPart(5)
+invokeTag('message','g',27,['code':("laudo.data.label"),'default':("Data")],-1)
+printHtmlPart(6)
+invokeTag('datePicker','g',28,['name':("data"),'precision':("day"),'value':(laudoInstance?.data)],-1)
+printHtmlPart(7)
+expressionOut.print(hasErrors(bean: laudoInstance, field: 'veterinario', 'error'))
+printHtmlPart(8)
+invokeTag('message','g',36,['code':("laudo.veterinario.label"),'default':("Veterinario")],-1)
+printHtmlPart(3)
+invokeTag('select','g',47,['id':("veterinario"),'name':("veterinario.id"),'from':(Veterinario.list()),'optionKey':("id"),'required':(""),'value':(laudoInstance?.veterinario?.id),'class':("form-control")],-1)
+printHtmlPart(7)
+expressionOut.print(hasErrors(bean: laudoInstance, field: 'arquivo.arquivo', 'error'))
+printHtmlPart(9)
+invokeTag('message','g',54,['code':("arquivoLaudo.arquivo.label"),'default':("Arquivo")],-1)
+printHtmlPart(10)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473459161646L
+public static final long LAST_MODIFIED = 1479498488639L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

@@ -50,13 +50,13 @@ expressionOut.print(flash.message)
 printHtmlPart(10)
 }
 printHtmlPart(11)
-invokeTag('sortableColumn','g',27,['property':("userEmail"),'title':(message(code: 'pessoa.userEmail.label', default: 'User Email'))],-1)
+invokeTag('sortableColumn','g',27,['property':("nome"),'title':(message(code: 'pessoa.nome.label', default: 'Nome'))],-1)
 printHtmlPart(12)
-invokeTag('sortableColumn','g',29,['property':("telefone1"),'title':(message(code: 'pessoa.telefone1.label', default: 'Telefone1'))],-1)
+invokeTag('sortableColumn','g',29,['property':("userEmail"),'title':(message(code: 'pessoa.userEmail.label', default: 'User Email'))],-1)
 printHtmlPart(12)
-invokeTag('sortableColumn','g',31,['property':("telefone2"),'title':(message(code: 'pessoa.telefone2.label', default: 'Telefone2'))],-1)
+invokeTag('sortableColumn','g',31,['property':("telefone1"),'title':(message(code: 'pessoa.telefone1.label', default: 'Telefone1'))],-1)
 printHtmlPart(12)
-invokeTag('sortableColumn','g',33,['property':("complemento"),'title':(message(code: 'pessoa.complemento.label', default: 'Complemento'))],-1)
+invokeTag('sortableColumn','g',33,['property':("telefone2"),'title':(message(code: 'pessoa.telefone2.label', default: 'Telefone2'))],-1)
 printHtmlPart(12)
 invokeTag('sortableColumn','g',35,['property':("bairro"),'title':(message(code: 'pessoa.bairro.label', default: 'Bairro'))],-1)
 printHtmlPart(12)
@@ -69,36 +69,39 @@ printHtmlPart(14)
 expressionOut.print((i % 2) == 0 ? 'even' : 'odd')
 printHtmlPart(15)
 createTagBody(3, {->
-expressionOut.print(fieldValue(bean: pessoaInstance, field: "userEmail"))
+expressionOut.print(fieldValue(bean: pessoaInstance, field: "nome"))
 })
 invokeTag('link','g',45,['action':("show"),'id':(pessoaInstance.id)],3)
+printHtmlPart(16)
+createTagBody(3, {->
+expressionOut.print(fieldValue(bean: pessoaInstance, field: "userEmail"))
+})
+invokeTag('link','g',47,['action':("show"),'id':(pessoaInstance.id)],3)
 printHtmlPart(16)
 expressionOut.print(fieldValue(bean: pessoaInstance, field: "telefone1"))
 printHtmlPart(16)
 expressionOut.print(fieldValue(bean: pessoaInstance, field: "telefone2"))
-printHtmlPart(16)
-expressionOut.print(fieldValue(bean: pessoaInstance, field: "complemento"))
-printHtmlPart(16)
+printHtmlPart(17)
 expressionOut.print(fieldValue(bean: pessoaInstance, field: "bairro"))
 printHtmlPart(16)
 expressionOut.print(fieldValue(bean: pessoaInstance, field: "cep"))
-printHtmlPart(17)
+printHtmlPart(18)
 i++
 }
 }
-printHtmlPart(18)
-invokeTag('paginate','g',62,['total':(pessoaInstanceCount ?: 0)],-1)
 printHtmlPart(19)
+invokeTag('paginate','g',62,['total':(pessoaInstanceCount ?: 0)],-1)
+printHtmlPart(20)
 })
 invokeTag('captureBody','sitemesh',65,[:],1)
-printHtmlPart(20)
+printHtmlPart(21)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473458303840L
+public static final long LAST_MODIFIED = 1479498489093L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

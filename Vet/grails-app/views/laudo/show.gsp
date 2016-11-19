@@ -23,20 +23,38 @@
 			</g:if>
 			<ol class="property-list laudo">
 			
+				<g:if test="${laudoInstance?.animal}">
+				<li class="fieldcontain">
+					<span id="animal-label" class="col-md-3 label-show"><g:message code="laudo.animal.label" default="Animal" /></span>
+					
+						<span class="col-md-4" aria-labelledby="animal-label"><g:link controller="animal" action="show" id="${laudoInstance?.animal?.id}">${laudoInstance?.animal?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${laudoInstance?.arquivo}">
 				<li class="fieldcontain">
-					<span id="arquivo-label" class="property-label"><g:message code="laudo.arquivo.label" default="Arquivo" /></span>
+					<span id="arquivo-label" class="col-md-3 label-show"><g:message code="laudo.arquivo.label" default="Arquivo" /></span>
 					
-						<span class="property-value" aria-labelledby="arquivo-label"><g:fieldValue bean="${laudoInstance}" field="arquivo"/></span>
+						<span class="col-md-4" aria-labelledby="arquivo-label"><g:link controller="arquivoLaudo" action="show" id="${laudoInstance?.arquivo?.id}">${laudoInstance?.arquivo?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
 			
 				<g:if test="${laudoInstance?.data}">
 				<li class="fieldcontain">
-					<span id="data-label" class="property-label"><g:message code="laudo.data.label" default="Data" /></span>
+					<span id="data-label" class="col-md-3 label-show"><g:message code="laudo.data.label" default="Data" /></span>
 					
-						<span class="property-value" aria-labelledby="data-label"><g:formatDate date="${laudoInstance?.data}" /></span>
+						<span class="col-md-4" aria-labelledby="data-label"><g:formatDate date="${laudoInstance?.data}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${laudoInstance?.veterinario}">
+				<li class="fieldcontain">
+					<span id="veterinario-label" class="col-md-3 label-show"><g:message code="laudo.veterinario.label" default="Veterinario" /></span>
+					
+						<span class="col-md-4" aria-labelledby="veterinario-label"><g:link controller="veterinario" action="show" id="${laudoInstance?.veterinario?.id}">${laudoInstance?.veterinario?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

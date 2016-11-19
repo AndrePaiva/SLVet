@@ -35,58 +35,51 @@ invokeTag('message','g',9,['code':("default.link.skip.label"),'default':("Skip t
 printHtmlPart(4)
 expressionOut.print(createLink(uri: '/'))
 printHtmlPart(5)
-invokeTag('message','g',12,['code':("default.home.label")],-1)
+invokeTag('message','g',13,['code':("default.home.label")],-1)
 printHtmlPart(6)
-createTagBody(2, {->
-invokeTag('message','g',13,['code':("default.list.label"),'args':([entityName])],-1)
-})
-invokeTag('link','g',13,['class':("list"),'action':("index")],2)
-printHtmlPart(7)
-invokeTag('message','g',17,['code':("default.create.label"),'args':([entityName])],-1)
-printHtmlPart(8)
 if(true && (flash.message)) {
-printHtmlPart(9)
+printHtmlPart(7)
 expressionOut.print(flash.message)
+printHtmlPart(8)
+}
+printHtmlPart(9)
+createTagBody(2, {->
 printHtmlPart(10)
-}
-printHtmlPart(11)
-createTagBody(2, {->
-printHtmlPart(12)
 createTagBody(3, {->
-printHtmlPart(13)
-if(true && (error in org.springframework.validation.FieldError)) {
-printHtmlPart(14)
-expressionOut.print(error.field)
-printHtmlPart(15)
-}
-printHtmlPart(16)
-invokeTag('message','g',24,['error':(error)],-1)
-printHtmlPart(17)
-})
-invokeTag('eachError','g',25,['bean':(animalInstance),'var':("error")],3)
-printHtmlPart(18)
-})
-invokeTag('hasErrors','g',27,['bean':(animalInstance)],2)
 printHtmlPart(11)
+if(true && (error in org.springframework.validation.FieldError)) {
+printHtmlPart(12)
+expressionOut.print(error.field)
+printHtmlPart(13)
+}
+printHtmlPart(14)
+invokeTag('message','g',28,['error':(error)],-1)
+printHtmlPart(15)
+})
+invokeTag('eachError','g',29,['bean':(animalInstance),'var':("error")],3)
+printHtmlPart(16)
+})
+invokeTag('hasErrors','g',31,['bean':(animalInstance)],2)
+printHtmlPart(9)
 createTagBody(2, {->
+printHtmlPart(17)
+invokeTag('render','g',34,['template':("form")],-1)
+printHtmlPart(18)
+invokeTag('submitButton','g',37,['name':("create"),'class':("save"),'value':(message(code: 'default.button.create.label', default: 'Create'))],-1)
 printHtmlPart(19)
-invokeTag('render','g',30,['template':("form")],-1)
+})
+invokeTag('form','g',39,['url':([resource:animalInstance, action:'save'])],2)
 printHtmlPart(20)
-invokeTag('submitButton','g',33,['name':("create"),'class':("save"),'value':(message(code: 'default.button.create.label', default: 'Create'))],-1)
+})
+invokeTag('captureBody','sitemesh',41,[:],1)
 printHtmlPart(21)
-})
-invokeTag('form','g',35,['url':([resource:animalInstance, action:'save'])],2)
-printHtmlPart(22)
-})
-invokeTag('captureBody','sitemesh',37,[:],1)
-printHtmlPart(23)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473891406054L
+public static final long LAST_MODIFIED = 1479498488342L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

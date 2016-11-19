@@ -2,7 +2,7 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: arquivoLaudoInstance, field: 'nomeArquivo', 'error')} required">
+<%--<div class="fieldcontain ${hasErrors(bean: arquivoLaudoInstance, field: 'nomeArquivo', 'error')} required">
 	<label for="nomeArquivo">
 		<g:message code="arquivoLaudo.nomeArquivo.label" default="Nome Arquivo" />
 		<span class="required-indicator">*</span>
@@ -18,7 +18,7 @@
 	</label>
 	<g:datePicker name="uploadData" precision="day"  value="${arquivoLaudoInstance?.uploadData}" default="none" noSelection="['': '']" />
 
-</div>
+</div> --%>
 
 <div class="fieldcontain ${hasErrors(bean: arquivoLaudoInstance, field: 'arquivo', 'error')} required">
 	<label for="arquivo">

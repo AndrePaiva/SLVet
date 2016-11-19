@@ -35,70 +35,63 @@ invokeTag('message','g',11,['code':("default.link.skip.label"),'default':("Skip 
 printHtmlPart(4)
 expressionOut.print(createLink(uri: '/'))
 printHtmlPart(5)
-invokeTag('message','g',14,['code':("default.home.label")],-1)
+invokeTag('message','g',15,['code':("default.home.label")],-1)
 printHtmlPart(6)
-createTagBody(2, {->
-invokeTag('message','g',15,['code':("default.new.label"),'args':([entityName])],-1)
-})
-invokeTag('link','g',15,['class':("create"),'action':("create")],2)
-printHtmlPart(7)
-invokeTag('message','g',19,['code':("default.list.label"),'args':([entityName])],-1)
-printHtmlPart(8)
 if(true && (flash.message)) {
-printHtmlPart(9)
+printHtmlPart(7)
 expressionOut.print(flash.message)
-printHtmlPart(10)
+printHtmlPart(8)
 }
+printHtmlPart(9)
+invokeTag('message','g',30,['code':("animal.cliente.label"),'default':("Cliente")],-1)
+printHtmlPart(10)
+invokeTag('sortableColumn','g',32,['property':("especie"),'title':(message(code: 'animal.especie.label', default: 'Especie'))],-1)
 printHtmlPart(11)
-invokeTag('message','g',27,['code':("animal.cliente.label"),'default':("Cliente")],-1)
+invokeTag('sortableColumn','g',34,['property':("nome"),'title':(message(code: 'animal.nome.label', default: 'Nome'))],-1)
+printHtmlPart(11)
+invokeTag('sortableColumn','g',36,['property':("peso"),'title':(message(code: 'animal.peso.label', default: 'Peso'))],-1)
+printHtmlPart(11)
+invokeTag('sortableColumn','g',38,['property':("raca"),'title':(message(code: 'animal.raca.label', default: 'Raca'))],-1)
+printHtmlPart(11)
+invokeTag('sortableColumn','g',40,['property':("tamanho"),'title':(message(code: 'animal.tamanho.label', default: 'Tamanho'))],-1)
 printHtmlPart(12)
-invokeTag('sortableColumn','g',29,['property':("especie"),'title':(message(code: 'animal.especie.label', default: 'Especie'))],-1)
-printHtmlPart(13)
-invokeTag('sortableColumn','g',31,['property':("nome"),'title':(message(code: 'animal.nome.label', default: 'Nome'))],-1)
-printHtmlPart(13)
-invokeTag('sortableColumn','g',33,['property':("peso"),'title':(message(code: 'animal.peso.label', default: 'Peso'))],-1)
-printHtmlPart(13)
-invokeTag('sortableColumn','g',35,['property':("raca"),'title':(message(code: 'animal.raca.label', default: 'Raca'))],-1)
-printHtmlPart(13)
-invokeTag('sortableColumn','g',37,['property':("tamanho"),'title':(message(code: 'animal.tamanho.label', default: 'Tamanho'))],-1)
-printHtmlPart(14)
 loop:{
 int i = 0
 for( animalInstance in (animalInstanceList) ) {
-printHtmlPart(15)
+printHtmlPart(13)
 expressionOut.print((i % 2) == 0 ? 'even' : 'odd')
-printHtmlPart(16)
+printHtmlPart(14)
 createTagBody(3, {->
 expressionOut.print(fieldValue(bean: animalInstance, field: "cliente"))
 })
-invokeTag('link','g',45,['action':("show"),'id':(animalInstance.id)],3)
-printHtmlPart(17)
+invokeTag('link','g',48,['action':("show"),'id':(animalInstance.id)],3)
+printHtmlPart(15)
 expressionOut.print(fieldValue(bean: animalInstance, field: "especie"))
-printHtmlPart(17)
+printHtmlPart(15)
 expressionOut.print(fieldValue(bean: animalInstance, field: "nome"))
-printHtmlPart(17)
+printHtmlPart(15)
 expressionOut.print(fieldValue(bean: animalInstance, field: "peso"))
-printHtmlPart(17)
+printHtmlPart(15)
 expressionOut.print(fieldValue(bean: animalInstance, field: "raca"))
-printHtmlPart(17)
+printHtmlPart(15)
 expressionOut.print(fieldValue(bean: animalInstance, field: "tamanho"))
-printHtmlPart(18)
+printHtmlPart(16)
 i++
 }
 }
-printHtmlPart(19)
-invokeTag('paginate','g',62,['total':(animalInstanceCount ?: 0)],-1)
-printHtmlPart(20)
+printHtmlPart(17)
+invokeTag('paginate','g',65,['total':(animalInstanceCount ?: 0)],-1)
+printHtmlPart(18)
 })
-invokeTag('captureBody','sitemesh',65,[:],1)
-printHtmlPart(21)
+invokeTag('captureBody','sitemesh',68,[:],1)
+printHtmlPart(19)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473891408312L
+public static final long LAST_MODIFIED = 1479498488390L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

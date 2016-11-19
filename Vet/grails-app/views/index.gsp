@@ -87,7 +87,7 @@
 		</div>--%>
 		<div id="page-body" role="main">
 			
-
+<%--
 			<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>
 				<ul>
@@ -96,6 +96,7 @@
 					</g:each>
 				</ul>
 			</div>
+			 --%>
 		</div>
 	</body>
 </html>

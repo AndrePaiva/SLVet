@@ -55,44 +55,69 @@ expressionOut.print(flash.message)
 printHtmlPart(11)
 }
 printHtmlPart(12)
-if(true && (laudoInstance?.arquivo)) {
+if(true && (laudoInstance?.animal)) {
 printHtmlPart(13)
-invokeTag('message','g',28,['code':("laudo.arquivo.label"),'default':("Arquivo")],-1)
+invokeTag('message','g',28,['code':("laudo.animal.label"),'default':("Animal")],-1)
 printHtmlPart(14)
-invokeTag('fieldValue','g',30,['bean':(laudoInstance),'field':("arquivo")],-1)
+createTagBody(3, {->
+expressionOut.print(laudoInstance?.animal?.encodeAsHTML())
+})
+invokeTag('link','g',30,['controller':("animal"),'action':("show"),'id':(laudoInstance?.animal?.id)],3)
+printHtmlPart(15)
+}
+printHtmlPart(16)
+if(true && (laudoInstance?.arquivo)) {
+printHtmlPart(17)
+invokeTag('message','g',37,['code':("laudo.arquivo.label"),'default':("Arquivo")],-1)
+printHtmlPart(18)
+createTagBody(3, {->
+expressionOut.print(laudoInstance?.arquivo?.encodeAsHTML())
+})
+invokeTag('link','g',39,['controller':("arquivoLaudo"),'action':("show"),'id':(laudoInstance?.arquivo?.id)],3)
 printHtmlPart(15)
 }
 printHtmlPart(16)
 if(true && (laudoInstance?.data)) {
-printHtmlPart(17)
-invokeTag('message','g',37,['code':("laudo.data.label"),'default':("Data")],-1)
-printHtmlPart(18)
-invokeTag('formatDate','g',39,['date':(laudoInstance?.data)],-1)
+printHtmlPart(19)
+invokeTag('message','g',46,['code':("laudo.data.label"),'default':("Data")],-1)
+printHtmlPart(20)
+invokeTag('formatDate','g',48,['date':(laudoInstance?.data)],-1)
 printHtmlPart(15)
 }
-printHtmlPart(19)
-createTagBody(2, {->
-printHtmlPart(20)
-createTagBody(3, {->
-invokeTag('message','g',47,['code':("default.button.edit.label"),'default':("Edit")],-1)
-})
-invokeTag('link','g',47,['class':("edit"),'action':("edit"),'resource':(laudoInstance)],3)
+printHtmlPart(16)
+if(true && (laudoInstance?.veterinario)) {
 printHtmlPart(21)
-invokeTag('actionSubmit','g',48,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
+invokeTag('message','g',55,['code':("laudo.veterinario.label"),'default':("Veterinario")],-1)
 printHtmlPart(22)
+createTagBody(3, {->
+expressionOut.print(laudoInstance?.veterinario?.encodeAsHTML())
 })
-invokeTag('form','g',50,['url':([resource:laudoInstance, action:'delete']),'method':("DELETE")],2)
+invokeTag('link','g',57,['controller':("veterinario"),'action':("show"),'id':(laudoInstance?.veterinario?.id)],3)
+printHtmlPart(15)
+}
 printHtmlPart(23)
-})
-invokeTag('captureBody','sitemesh',52,[:],1)
+createTagBody(2, {->
 printHtmlPart(24)
+createTagBody(3, {->
+invokeTag('message','g',65,['code':("default.button.edit.label"),'default':("Edit")],-1)
+})
+invokeTag('link','g',65,['class':("edit"),'action':("edit"),'resource':(laudoInstance)],3)
+printHtmlPart(25)
+invokeTag('actionSubmit','g',66,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
+printHtmlPart(26)
+})
+invokeTag('form','g',68,['url':([resource:laudoInstance, action:'delete']),'method':("DELETE")],2)
+printHtmlPart(27)
+})
+invokeTag('captureBody','sitemesh',70,[:],1)
+printHtmlPart(28)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473459160706L
+public static final long LAST_MODIFIED = 1479507814245L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

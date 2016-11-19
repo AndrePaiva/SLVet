@@ -1,4 +1,4 @@
-
+<%@ page import="vet.Veterinario" %>
 <!DOCTYPE html>
 <html>
 	<head>
